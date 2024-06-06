@@ -14,10 +14,129 @@ import { useFrame, useThree } from '@react-three/fiber';
 import islandScene from '../assets/3d/island.glb';
 import { a } from '@react-spring/three';
 
-const Island = (props) => {
+const Island = ({
+  isRotating,
+  setIsRotating,
+  setCurrentStage,
+  ...props
+}) => {
+
   const islandRef = useRef();
 
-  const { nodes, materials } = useGLTF(islandScene)
+  const { gl, viewport } = useThree();
+  const { nodes, materials } = useGLTF(islandScene);
+
+  const lastX = useRef(0); // storing the last cursor position
+  const rotationSpeed = useRef(0); // keeping track on how the island is rotating
+  const dumpingfactor = 0.95; // keeping track on how we are srolling through
+
+  // handling cursor events
+  const handlePointerDown = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(true);
+
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+
+    lastX.current = clientX;
+  };
+
+  const handlePointerUp = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(false);
+  };
+
+  const handlePointerMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (isRotating) {
+
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+
+      const delta = (clientX - lastX.current) / viewport.width; // calculating the mouse change on the island
+
+      islandRef.current.rotation.y += delta * 0.01 * Math.PI; // new Island position
+      lastX.current = clientX;
+      rotationSpeed.current = delta * 0.01 * Math.PI;
+    }
+  };
+
+  // handling keyboard events
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowLeft') {
+      if (!isRotating) {
+        setIsRotating(true);
+      }
+
+      islandRef.current.rotation.y += 0.005 * Math.PI;
+      rotationSpeed.current = 0.007;
+    } else if (e.key === "ArrowRight") {
+      if (!isRotating) {
+        setIsRotating(true);
+      }
+      islandRef.current.rotation.y -= 0.005 * Math.PI;
+      rotationSpeed.current = -0.007;
+    }
+  };
+
+  const handleKeyUp = (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      setIsRotating(false);
+    }
+  };
+
+  useFrame(() => {
+    if (!isRotating) {
+      rotationSpeed.current *= dumpingfactor;
+
+      if (Math.abs(rotationSpeed.current) < 0.001) {
+        rotationSpeed.current = 0;
+      }
+    } else {
+      const rotation = islandRef.current.rotation.y;
+
+      const normalizedRotation = ((rotation % (Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+
+      // set the current stage based on the island's orientaion
+      switch (true) {
+        case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
+          setCurrentStage(4);
+          break;
+        case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
+          setCurrentStage(3);
+          break;
+        case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
+          setCurrentStage(2);
+          break;
+        case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
+          setCurrentStage(1);
+          break;
+        default:
+          setCurrentStage(null);
+      }
+
+    }
+  });
+
+  useEffect(() => {
+    const canvas = gl.domElement;
+    canvas.addEventListener('pointerdown', handlePointerDown);
+    canvas.addEventListener('pointerup', handlePointerUp);
+    canvas.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      canvas.removeEventListener('pointerdown', handlePointerDown);
+      canvas.removeEventListener('pointerup', handlePointerUp);
+      canvas.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+
+    }
+  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
   return (
     <a.group ref={islandRef} {...props} >
