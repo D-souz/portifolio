@@ -5,7 +5,7 @@ import github from './github.svg'
 import html from './html.svg'
 import javascript from './javascript.svg'
 import mongodb from './mongodb.svg'
-import motion from './motion.svg'
+import bootstrap from './bootstrap.svg'
 import mui from './mui.svg'
 import nextjs from './nextjs.svg'
 import nodejs from './nodejs.svg'
@@ -26,6 +26,7 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import wordpress from './wordpress.svg'
 
 export {
     css,
@@ -35,7 +36,7 @@ export {
     html,
     javascript,
     mongodb,
-    motion,
+    bootstrap,
     mui,
     nextjs,
     nodejs,
@@ -55,5 +56,6 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    wordpress
 }
