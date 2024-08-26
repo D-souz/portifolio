@@ -178,12 +178,12 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/D-souz',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+        link: 'https://www.linkedin.com/in/dhesouza-norbert/',
     }
 ];
 
@@ -191,16 +191,16 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        name: 'Ecommerce website',
+        description: 'Developed an eCommerce website for d&l connections, a company that deals in electronic gadgets such as phones',
+        link: 'https://dlconnections.techsoults.com/',
     },
     {
         iconUrl: threads,
         theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
+        name: 'Car Identification & Verfication System',
+        description: 'Created a full-stack web app that enabled users to identifing & verfiying vehicles using Qr code technology',
+        link: 'https://github.com/D-souz/vehicle-identification-verification-system-frontend',
     },
     {
         iconUrl: car,
