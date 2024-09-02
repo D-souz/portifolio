@@ -24,7 +24,9 @@ import {
     tailwindcss,
     threads,
     typescript,
-    wordpress
+    wordpress,
+    dl,
+    weather
 } from "../assets/icons";
 
 export const skills = [
@@ -189,45 +191,45 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: pricewise,
+        iconUrl: dl,
         theme: 'btn-back-red',
         name: 'Ecommerce website',
         description: 'Developed an eCommerce website for d&l connections, a company that deals in electronic gadgets such as phones',
         link: 'https://dlconnections.techsoults.com/',
     },
     {
-        iconUrl: threads,
+        iconUrl: car,
         theme: 'btn-back-green',
         name: 'Car Identification & Verfication System',
         description: 'Created a full-stack web app that enabled users to identifing & verfiying vehicles using Qr code technology',
         link: 'https://github.com/D-souz/vehicle-identification-verification-system-frontend',
     },
     {
-        iconUrl: car,
+        iconUrl: weather,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'Weather App',
+        description: 'Designed and built a mobile app to enable users determine the weather condition of different towns and cities.',
+        link: 'https://github.com/D-souz/WeatherApp',
     },
-    {
-        iconUrl: snapgram,
-        theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
-    },
-    {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
-    },
-    {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+    // {
+    //     iconUrl: snapgram,
+    //     theme: 'btn-back-pink',
+    //     name: 'Full Stack Instagram Clone',
+    //     description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
+    //     link: 'https://github.com/adrianhajdin/social_media_app',
+    // },
+    // {
+    //     iconUrl: estate,
+    //     theme: 'btn-back-black',
+    //     name: 'Real-Estate Application',
+    //     description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
+    //     link: 'https://github.com/adrianhajdin/projects_realestate',
+    // },
+    // {
+    //     iconUrl: summiz,
+    //     theme: 'btn-back-yellow',
+    //     name: 'AI Summarizer Application',
+    //     description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
+    //     link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+    // }
 ];

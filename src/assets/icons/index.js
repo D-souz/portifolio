@@ -27,6 +27,8 @@ import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
 import wordpress from './wordpress.svg'
+import dl from './d&l.png'
+import weather from './weather.svg'
 
 export {
     css,
@@ -57,5 +59,7 @@ export {
     contact,
     soundon,
     soundoff,
-    wordpress
+    wordpress,
+    dl,
+    weather
 }
