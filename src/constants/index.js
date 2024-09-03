@@ -26,7 +26,8 @@ import {
     typescript,
     wordpress,
     dl,
-    weather
+    weather,
+    password
 } from "../assets/icons";
 
 export const skills = [
@@ -211,13 +212,13 @@ export const projects = [
         description: 'Designed and built a mobile app to enable users determine the weather condition of different towns and cities.',
         link: 'https://github.com/D-souz/WeatherApp',
     },
-    // {
-    //     iconUrl: snapgram,
-    //     theme: 'btn-back-pink',
-    //     name: 'Full Stack Instagram Clone',
-    //     description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-    //     link: 'https://github.com/adrianhajdin/social_media_app',
-    // },
+    {
+        iconUrl: password,
+        theme: 'btn-back-pink',
+        name: 'Password Generator',
+        description: 'Built a web app that allowed users to generate passwords of varius lengths based on the input figure.',
+        link: 'https://github.com/D-souz/password-generator',
+    },
     // {
     //     iconUrl: estate,
     //     theme: 'btn-back-black',

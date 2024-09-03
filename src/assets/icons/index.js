@@ -29,6 +29,7 @@ import soundoff from './soundoff.png'
 import wordpress from './wordpress.svg'
 import dl from './d&l.png'
 import weather from './weather.svg'
+import password from './password.svg'
 
 export {
     css,
@@ -61,5 +62,6 @@ export {
     soundoff,
     wordpress,
     dl,
-    weather
+    weather,
+    password
 }
