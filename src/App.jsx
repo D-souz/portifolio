@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 const App = () => {
   return (
     <main className='bg-slate-300/20 h-full'>
-      <Router>
+      <Router basename='/portifolio/'>
         <NavBar />
         <Routes>
           <Route path='/' element={<Home/>}/>
